@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:navigationContentDescription="返回"
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        android:minHeight="56dip"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:singleLine="true" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/fl_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/tranversal_viewTree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="广度便利view树" />
+
+        <Button
+            android:id="@+id/pre_tranversal_viewTree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="前序便利view树" />
+
+        <Button
+            android:id="@+id/recursion_tranversal_viewTree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="递归便利view树" />
+
+    </LinearLayout>
+
+</LinearLayout>
