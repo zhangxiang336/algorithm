@@ -3,7 +3,9 @@ package com.android.algorithm.linkedList;
 /**
  * 翻转链表
  *
- * 思路：是原列表的头 ，一步步指向新列表的头 current.next=pre;
+ * 思路：1原列表的头current ，一步步指向新 列表的头 current.next=newHead;
+ *       2.current就是新的头
+ *       current后移.本该current=current.next,但是current.next变了,所以要先暂存current.next.
  *
  * 注意：
  *

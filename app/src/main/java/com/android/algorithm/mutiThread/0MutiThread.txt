@@ -1,0 +1,12 @@
+多线程：一般考察线程同步
+1、Syncronized(){}
+2、Reentandlock+Condition
+3、按顺序执行的话,可以使用:
+    公平锁:要求足够的时间排好队,一个做完唤醒下一个.
+    多个Condition:await会释放锁,不怕阻塞,只要按顺序唤醒signal
+
+
+
+
+结题思路：
+

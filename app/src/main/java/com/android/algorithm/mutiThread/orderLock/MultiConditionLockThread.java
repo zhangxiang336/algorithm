@@ -17,8 +17,6 @@ class MultiConditionLockThread {
     private Condition condition3 = lock.newCondition();
 
     public static void main(String[] args) {
-        Thread t;
-
         MultiConditionLockThread fairLockExecutor = new MultiConditionLockThread();
         fairLockExecutor.printABC();
     }
@@ -56,7 +54,7 @@ class MultiConditionLockThread {
                         condition2.await();
                         Thread.sleep(50);
                     } catch (InterruptedException e) {
-
+                         e.printStackTrace();
                     } finally {
                         lock.unlock();
                     }

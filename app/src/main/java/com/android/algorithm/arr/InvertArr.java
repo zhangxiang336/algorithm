@@ -11,7 +11,7 @@ class InvertArr {
     public static void main(String[] args) {
         String[] arr = {"1", "2", "3", "4", "5", "6"};
         InvertArr reverseArr = new InvertArr();
-        reverseArr.multiThreadInvertArr(arr);
+        reverseArr.invertArr(arr);
 
         //result
         for (int i = 0; i < arr.length; i++) {
@@ -19,7 +19,7 @@ class InvertArr {
         }
     }
 
-    private void multiThreadInvertArr(String[] arr) {
+    private void invertArr(String[] arr) {
         //异常判断
         if (arr == null || arr.length == 0) {
             return;

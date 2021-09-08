@@ -10,6 +10,11 @@ import java.util.Arrays;
  * <p>
  * 注意：1、不要使用固有思维：删除一个省下的移动
  * 2、如果放在一个新数组，逻辑简单，但是数组长度怎么确定？
+ *
+ * 实现:
+ *     1,遍历数组,取值var
+ *     2,指针遍历结果数组,index.
+ *     3.var跟index 前面一个值对比.大于的话则放在index位置.
  */
 class RemoveDumplicateArr {
 
@@ -17,10 +22,10 @@ class RemoveDumplicateArr {
         RemoveDumplicateArr reverseArr = new RemoveDumplicateArr();
         int[] arr = {1, 2, 3, 3, 5, 6};
 
-        reverseArr.multiThreadInvertArr(arr);
+        reverseArr.removeDupArr(arr);
     }
 
-    private void multiThreadInvertArr(int[] arr) {
+    private void removeDupArr(int[] arr) {
         //异常判断
         if (arr == null || arr.length == 0) {
             return;

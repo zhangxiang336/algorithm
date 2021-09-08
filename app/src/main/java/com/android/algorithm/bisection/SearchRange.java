@@ -24,10 +24,10 @@ class SearchRange {
             return null;
         }
         int[] result = new int[2];
+
         //实现主体算法
         int start = 0;
-        int end = arr1.length - 1;// 注意
-
+        int end = arr1.length - 1;
         while (start <= end) {
             int mid = (start + end) / 2;
             if (arr1[mid] == val) {
@@ -42,9 +42,9 @@ class SearchRange {
         if (start != arr1.length) {
             result[0] = start;
         }
-        start = 0;
-        end = arr1.length - 1;// 注意
 
+        start = 0;
+        end = arr1.length - 1;
         while (start <= end) {
             int mid = (start + end) / 2;
             if (arr1[mid] == val) {

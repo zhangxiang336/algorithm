@@ -17,17 +17,17 @@ class ClimbStairs {
     }
 
     private int climbStairs(int n) {
-        int[] dpResult = new int[n + 1];
+        int[] dpResult = new int[n];
         //异常判断
         if (n == 1) {
             return 1;
         }
-        dpResult[1] = 1;//注意：不管n等于几都要赋值。
-        dpResult[2] = 2;
+        dpResult[0] = 1;//注意：不管n等于几都要赋值。
+        dpResult[1] = 2;
 
-        for (int i = 3; i <= n; i++) {
+        for (int i = 2; i < n; i++) {
             dpResult[i] = dpResult[i - 1] + dpResult[i - 2];
         }
-        return dpResult[n];
+        return dpResult[n - 1];
     }
 }
