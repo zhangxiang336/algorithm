@@ -22,10 +22,10 @@ class RemoveDumplicateArr {
         RemoveDumplicateArr reverseArr = new RemoveDumplicateArr();
         int[] arr = {1, 2, 3, 3, 5, 6};
 
-        reverseArr.removeDupArr(arr);
+        reverseArr.removeDumpArr(arr);
     }
 
-    private void removeDupArr(int[] arr) {
+    private void removeDumpArr(int[] arr) {
         //异常判断
         if (arr == null || arr.length == 0) {
             return;

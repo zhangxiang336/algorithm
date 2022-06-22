@@ -32,4 +32,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     compileOnly 'com.android.tools.build:gradle:3.0.0'
+    implementation "miuix.appcompat:appcompat:1.1.0-beta10"
+//    implementation 'miuix.preference:preference-sdk:1.1.0-alpha10'
+    implementation 'miuix.nestedheader:nestedheader:1.0.0-alpha01'
 }

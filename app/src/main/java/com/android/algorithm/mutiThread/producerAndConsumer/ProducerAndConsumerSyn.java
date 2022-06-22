@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * @author 86137
+ * synchronized+Thread 实现
  * Create at 2021/2/24.
  */
 
@@ -77,4 +77,5 @@ class ProducerAndConsumerSyn {
             }
         }
     }
+
 }

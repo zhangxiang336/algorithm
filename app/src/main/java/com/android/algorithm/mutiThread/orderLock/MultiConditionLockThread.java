@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * 3个线程交替打印 ABC 10次。
  * 思路：利用多condition，唤醒特定线程，实现线程顺序性
- * 注意：sleep不能省略，不然没有节奏。
+ * 注意：需要保证线程的首次执行顺序。
  */
 
 class MultiConditionLockThread {
@@ -33,7 +33,7 @@ class MultiConditionLockThread {
                         condition2.signal();
                         condition1.await();
                         //注意：sleep不能省略，不然没有节奏。
-                        Thread.sleep(50);
+//                        Thread.sleep(50);
                     } catch (InterruptedException e) {
 
                     } finally {
@@ -52,9 +52,9 @@ class MultiConditionLockThread {
                         System.out.print("B");
                         condition3.signal();
                         condition2.await();
-                        Thread.sleep(50);
+//                        Thread.sleep(50);
                     } catch (InterruptedException e) {
-                         e.printStackTrace();
+                        e.printStackTrace();
                     } finally {
                         lock.unlock();
                     }
@@ -70,7 +70,7 @@ class MultiConditionLockThread {
                         System.out.print("C");
                         condition1.signal();
                         condition3.await();
-                        Thread.sleep(50);
+//                        Thread.sleep(50);
                     } catch (InterruptedException e) {
 
                     } finally {
@@ -79,9 +79,16 @@ class MultiConditionLockThread {
                 }
             }
         });
-        t1.start();
-        t2.start();
-        t3.start();
+        try {
+            t1.start();
+            Thread.sleep(50);
+            t2.start();
+            Thread.sleep(50);
+            t3.start();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

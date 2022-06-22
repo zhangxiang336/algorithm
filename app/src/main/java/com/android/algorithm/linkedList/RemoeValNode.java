@@ -18,11 +18,11 @@ class RemoeValNode {
     public static void main(String[] args) {
         RemoeValNode remoeValNode = new RemoeValNode();
         ListNode<Integer> listNode = ListNodeUtil.arrayToList(ListNodeUtil.fullIntArr);
-        ListNode result = remoeValNode.remoeValNode(listNode, 5);
+        ListNode result = remoeValNode.removeValNode(listNode, 5);
         ListNodeUtil.printList(result);
     }
 
-    private ListNode remoeValNode(ListNode<Integer> head, int val) {
+    private ListNode removeValNode(ListNode<Integer> head, int val) {
         //异常判断
         if (head == null) {
             return head;
@@ -41,5 +41,22 @@ class RemoeValNode {
 
         return pre.next;
     }
+    private ListNode removeValNode1(ListNode<Integer> head,int val){
+        if(head ==null){
+            return null;
+        }
+        ListNode<Integer> pre=new ListNode<Integer>(val);
+        pre.next=head;
+        ListNode<Integer> current=pre;
+        while(current!=null&&current.next!=null){
+            if(current.next.val==val){
+                current.next=current.next.next;
+            }else{
+                current=current.next;
+            }
+        }
 
+        return pre.next;
+
+    }
 }

@@ -1,9 +1,9 @@
 package com.android.algorithm.tree;
 
 /**
- *判断两棵树是否相同
- *
- *记住：对比公式
+ * 判断两棵树是否相同
+ * <p>
+ * 记住：对比公式
  */
 
 public class IsSameBTree {
@@ -33,4 +33,13 @@ public class IsSameBTree {
     }
 
 
+    private boolean isSameTree(TreeNode<Integer> head1, TreeNode<Integer> head2) {
+        if (head1 == null && head2 == null) {
+            return true;
+        }
+        if (head1.val != head2.val) {
+            return false;
+        }
+        return isSameTree(head1.left, head2.left) && isSameTree(head1.right, head2.right);
+    }
 }

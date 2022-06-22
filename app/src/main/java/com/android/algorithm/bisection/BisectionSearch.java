@@ -36,4 +36,24 @@ class BisectionSearch {
         }
         return -1;
     }
+
+    private int search(int[] arr, int val) {
+        if (arr == null || arr.length == 0) {
+            return -1;
+        }
+        int start = 0;
+        int end = arr.length - 1;
+        int mid = 0;
+        while (start <= end) {
+            mid = (start + end) / 2;
+            if (arr[mid] == val) {
+                return mid;
+            }else if(arr[mid]<val){
+                start=mid+1;
+            }else if(arr[mid] >val){
+                end=mid-1;
+            }
+        }
+        return -1;
+    }
 }

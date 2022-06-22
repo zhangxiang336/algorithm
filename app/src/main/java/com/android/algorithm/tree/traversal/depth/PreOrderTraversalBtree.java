@@ -25,13 +25,31 @@ class PreOrderTraversalBtree {
         }
         //实现主体算法
         TreeNode node = treeNode1;
-        while (node!=null||!stack.isEmpty()) {
+        while (node != null || !stack.isEmpty()) {
             while (node != null) {
                 System.out.println(node.val);
                 stack.push(node);
                 node = node.left;
             }
             TreeNode popNode = stack.pop();
+            node = popNode.right;
+        }
+    }
+
+    private void preTraversalBTree(TreeNode<Integer> rootNode) {
+        if (rootNode == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode<Integer> popNode;
+        TreeNode<Integer> node = rootNode;
+        while (!stack.empty() || node != null) {
+            while (node != null) {
+                stack.push(node);
+                System.out.println(node.val);
+                node = node.left;
+            }
+            popNode = stack.pop();
             node = popNode.right;
         }
     }

@@ -17,7 +17,7 @@ class ClimbStairs {
     }
 
     private int climbStairs(int n) {
-        int[] dpResult = new int[n];
+        int[] dpResult = new int[n];//
         //异常判断
         if (n == 1) {
             return 1;
@@ -28,6 +28,21 @@ class ClimbStairs {
         for (int i = 2; i < n; i++) {
             dpResult[i] = dpResult[i - 1] + dpResult[i - 2];
         }
-        return dpResult[n - 1];
+        return dpResult[n - 1];//长度是n的，最后一个下标是n-1.
     }
+
+
+    private int climbStairs1(int n) {
+        int[] result = new int[n];
+        if (n == 0 || n == 1) {
+            return n;
+        }
+        result[0] = 1;
+        result[1] = 2;
+        for (int i = 2; i < n; i++) {
+            result[i] = result[i - 1] + result[i - 2];
+        }
+        return result[n - 1];
+    }
+
 }

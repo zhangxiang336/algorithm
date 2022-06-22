@@ -25,12 +25,32 @@ class MidOrderTraversalBtree {
         }
         //实现主体算法
         TreeNode node = treeNode1;
-        while (node!=null||!stack.isEmpty()) {
+        while (node != null || !stack.isEmpty()) {
             while (node != null) {
                 stack.push(node);
                 node = node.left;
             }
             TreeNode popNode = stack.pop();
+            System.out.println(popNode.val);
+            node = popNode.right;
+        }
+    }
+
+    private void traversalMidBTree(TreeNode<Integer> rootNode) {
+        if (rootNode == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode<Integer> node = rootNode;
+        TreeNode popNode;
+        while (!stack.empty() || node != null) {
+            while (node != null) {
+                //跟广度遍历不同，不提前放rootNode。广度遍历是根据取出来的判断是否要放。
+                //深度遍历是根据自身判断要不要放，然后再取。
+                stack.push(node);
+                node = node.left;
+            }
+            popNode = stack.pop();
             System.out.println(popNode.val);
             node = popNode.right;
         }

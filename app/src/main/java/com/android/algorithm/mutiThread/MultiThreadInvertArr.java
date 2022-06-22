@@ -49,9 +49,9 @@ class MultiThreadInvertArr {
         private CountDownLatch latch;
 
         public ReverseTask(CountDownLatch latch, int threadCount, int num) {
-            step = threadCount;
+            this.step = threadCount;
             this.latch = latch;
-            threadNum = num;
+            this.threadNum = num;
         }
 
         @Override

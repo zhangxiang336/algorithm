@@ -37,4 +37,24 @@ class MergeList {
         }
     }
 
+    public ListNode mergeTwoLists(ListNode<Integer> l1, ListNode<Integer> l2) {
+        ListNode headpro = new ListNode(-1);
+        ListNode headtemp = headpro;
+        while (l1 != null && l2 != null) {
+            //接上大的那个
+            if (l1.val >= l2.val) {
+                headpro.next = l2;
+
+                l2 = l2.next;
+            } else {
+                headpro.next = l1;
+                l1 = l1.next;
+            }
+            headpro = headpro.next;
+        }
+        headpro.next = l1 != null ? l1:l2;
+        return headtemp.next;
+    }
+
+
 }

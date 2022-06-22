@@ -10,7 +10,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author 86137
+ * Execuotr+lock 实现，
  * Create at 2021/2/25.
  */
 

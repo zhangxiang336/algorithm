@@ -7,6 +7,8 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Process;
+import android.util.Log;
 import android.util.TypedValue;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,6 +21,10 @@ import com.android.algorithm.tree.traversal.recursion.RecursionPreTraversalViewT
 
 import java.util.List;
 
+import miuix.appcompat.app.ActionBar;
+import miuix.core.widget.NestedScrollView;
+import miuix.nestedheader.widget.NestedHeaderLayout;
+
 public class MainActivity extends Activity {
 
     @Override
@@ -30,6 +36,8 @@ public class MainActivity extends Activity {
         toolbar.setNavigationOnClickListener(v -> {
             finish();
         });
+
+
 
         Button button1 = findViewById(R.id.tranversal_viewTree);
         button1.setOnClickListener(v -> {
@@ -48,6 +56,7 @@ public class MainActivity extends Activity {
             }
 
         });
+
         Button button2 = findViewById(R.id.pre_tranversal_viewTree);
         button2.setOnClickListener(v -> {
 //            DepthTraversalViewTree levelTraversalViewTree = new DepthTraversalViewTree();
@@ -71,19 +80,24 @@ public class MainActivity extends Activity {
 //            RecursionPreTraversalViewTree recursionTraversalViewTree = new RecursionPreTraversalViewTree();
 //            recursionTraversalViewTree.recursionPreTraversalViewTree(button3.getRootView());
 
-            Intent intent = new Intent("android.intent.action.MIPAYINFO");
-            intent.setPackage("com.mipay.wallet");
-            List<ResolveInfo> activities = getPackageManager().queryIntentActivities(intent, 0);
-            if (activities.size() <= 0) {
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.addCategory("com.mipay.wallet.MIPAYINFO");
-                intent.setData(Uri.parse("https://app.mipay.com/?id=mipay.info"));
-            }
-            startActivityForResult(intent, 1);
+//            for (int i = 0; i < 300; i++) {
+//                getLayoutInflater().inflate(R.layout.activity_main, null);
+//
+//            }
 
         });
 
         Resources.getSystem();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
 

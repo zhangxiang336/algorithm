@@ -4,7 +4,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * 阻塞队列实现生产者、消费者
+ * 阻塞队列实现
  *
  * 思路：利用BlockingQueue 操作的同步性
  *

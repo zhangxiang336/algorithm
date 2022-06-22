@@ -3,7 +3,9 @@ package com.android.algorithm.tree.traversal.breadth;
 import com.android.algorithm.tree.TreeNode;
 import com.android.algorithm.tree.TreeNodeUtil;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 
 /**
@@ -18,6 +20,7 @@ class LevelTraversalBtree {
         TreeNode treeNode = TreeNodeUtil.arrayToTreeNode(TreeNodeUtil.fullIntArr);
 
         levelTraversalBtree.levelTraversalBtree(treeNode);
+        levelTraversalBtree.traversalBTreeLevel(treeNode);
     }
 
     private void levelTraversalBtree(TreeNode treeNode1) {
@@ -38,7 +41,7 @@ class LevelTraversalBtree {
             level++;
             for (int i = 0; i < length; i++) {
                 node = queue.poll();
-                System.out.println("第"+level+"层:"+node.val);
+                System.out.println("第" + level + "层:" + node.val);
                 if (node.left != null) {
                     queue.add(node.left);
                 }
@@ -47,5 +50,40 @@ class LevelTraversalBtree {
                 }
             }
         }
+    }
+
+    private void traversalBTreeLevel(TreeNode<Integer> node) {
+        if (node == null) {
+            return;
+        }
+        Map<Integer, LinkedList<Integer>> map = new HashMap<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        TreeNode<Integer> node1;
+
+        queue.add(node);
+        int length;//注意不要把每层的数量和层级弄混了。
+        int level=0;
+        LinkedList<Integer> list;
+        while (!queue.isEmpty()) {
+
+            length = queue.size();
+            list = new LinkedList<>();
+            level++;
+            for (int i = 0; i < length; i++) {
+                node1 = queue.poll();
+                list.add(node1.val);
+                System.out.println();
+                if (node1.left != null) {
+                    queue.add(node1.left);
+                }
+                if (node1.right != null) {
+                    queue.add(node1.right);
+                }
+            }
+
+            map.put(level, list);
+        }
+        System.out.println(map.toString());
+
     }
 }

@@ -25,7 +25,7 @@ class BubbleSort {
             return;
         }
         //实现主体算法
-        int temp;
+
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 //j我要大，我就和后面的交换
@@ -43,5 +43,25 @@ class BubbleSort {
         int temp = ints[i];
         ints[i] = ints[j];
         ints[j] = temp;
+    }
+
+    private void bubbleSort1(int[] arr) {//数组也是传的引用，没有新数组的话，不需要单独返回，
+        if (arr == null || arr.length == 0) {
+            return;
+        }
+        int length = arr.length;
+        for (int i = 1; i < length; i++) {
+            for (int j = 0; j < length - i; j++) {//j一定要从0开始。
+                if (arr[j] > arr[j + 1]) {
+                    swap1(arr, j, j + 1);
+                }
+            }
+        }
+    }
+
+    private void swap1(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }

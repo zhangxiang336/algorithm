@@ -1,0 +1,71 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <!--    iot_provision_dimens-->
+    <dimen name="room_setting_next_button_margin_left">390.6dp</dimen>
+    <dimen name="room_setting_title_layout_height">108.0dp</dimen>
+    <dimen name="room_setting_view_margin_left">57.6dp</dimen>
+    <dimen name="room_setting_view_margin_top">49.2dp</dimen>
+    <dimen name="room_setting_view_text_size">33.0sp</dimen>
+
+    <dimen name="room_setting_next_btn_width">129.6dp</dimen>
+    <dimen name="room_setting_next_btn_height">57.6dp</dimen>
+    <dimen name="room_setting_next_btn_margin_top">45.0dp</dimen>
+    <dimen name="room_setting_next_btn_margin_bottom">15.0dp</dimen>
+    <dimen name="room_setting_next_btn_text_size">21.6sp</dimen>
+
+    <dimen name="room_setting_grid_view_margin_left">57.6dp</dimen>
+    <dimen name="room_setting_grid_view_margin_top">26.4dp</dimen>
+    <dimen name="room_setting_grid_view_margin_right">57.6dp</dimen>
+    <dimen name="room_setting_grid_view_horizontal_spacing">24.0dp</dimen>
+
+
+    <dimen name="need_wifi_img_view_layout_width">90.0dp</dimen>
+    <dimen name="need_wifi_img_view_layout_height">90.0dp</dimen>
+    <dimen name="need_wifi_img_view_margin_top">126.0dp</dimen>
+
+    <dimen name="need_wifi_text_view1_margin_top">32.4dp</dimen>
+    <dimen name="need_wifi_text_view1_text_size">27.0sp</dimen>
+
+    <dimen name="need_wifi_text_view2_margin_top">10.2dp</dimen>
+    <dimen name="need_wifi_text_view2_text_size">21.6sp</dimen>
+
+    <dimen name="need_wifi_text_view3_layout_width">360.0dp</dimen>
+    <dimen name="need_wifi_text_view3_layout_height">58.2dp</dimen>
+    <dimen name="need_wifi_text_view3_margin_top">54.0dp</dimen>
+    <dimen name="need_wifi_text_view3_text_size">21.6sp</dimen>
+
+
+    <dimen name="room_setting_grid_item_text_layout_width">145.2dp</dimen>
+    <dimen name="room_setting_grid_item_text_layout_height">145.2dp</dimen>
+    <dimen name="room_setting_grid_item_text_text_size">27.0sp</dimen>
+
+    <dimen name="room_setting_grid_item_img_layout_width">54.0dp</dimen>
+    <dimen name="room_setting_grid_item_img_layout_height">54.0dp</dimen>
+
+    <dimen name="room_setting_grid_item_id_text_text_size">12.0sp</dimen>
+
+
+    <dimen name="room_setting_list_item_layout_height">84.0dp</dimen>
+    <dimen name="room_setting_list_item_padding_start">12.6dp</dimen>
+    <dimen name="room_setting_list_item_padding_end">12.6dp</dimen>
+    <dimen name="room_setting_list_item_text_size">23.4dp</dimen>
+
+
+    <dimen name="room_setting_complete_title_layout_height">108.0dp</dimen>
+    <dimen name="room_setting_complete_title_margin_left">57.6dp</dimen>
+    <dimen name="room_setting_complete_title_margin_top">49.2dp</dimen>
+    <dimen name="room_setting_complete_title_text_size">33.0sp</dimen>
+
+    <dimen name="room_setting_complete_devices_btn_layout_width">151.2dp</dimen>
+    <dimen name="room_setting_complete_devices_btn_layout_height">57.6dp</dimen>
+    <dimen name="room_setting_complete_devices_btn_margin_left">105.0dp</dimen>
+    <dimen name="room_setting_complete_devices_btn_margin_top">43.2dp</dimen>
+    <dimen name="room_setting_complete_devices_btn_margin_bottom">15.0dp</dimen>
+    <dimen name="room_setting_complete_devices_btn_text_size">21.6sp</dimen>
+
+    <dimen name="room_setting_complete_text_prompt_list_divider_height">24.0dp</dimen>
+    <dimen name="room_setting_complete_text_prompt_list_margin_left">57.6dp</dimen>
+    <dimen name="room_setting_complete_text_prompt_list_margin_top">26.4dp</dimen>
+    <dimen name="room_setting_complete_text_prompt_list_margin_right">57.6dp</dimen>
+</resources>
+

@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  *  移除元素 nums = [3,2,2,3], val = 3。
+ *  不额外使用空间，不考虑剩余长度。
  * <p>
  * 思路：
  * <p>
@@ -24,10 +25,10 @@ class RemoveValArr {
         }
     }
 
-    private void removeValArr(int[] arr, int val1) {
+    private int removeValArr(int[] arr, int val1) {
         //异常判断
         if (arr == null || arr.length == 0) {
-            return;
+            return 0;
         }
         int index = 0;
         for (int val : arr) {
@@ -36,13 +37,13 @@ class RemoveValArr {
                 index++;
             }
         }
-
+        return index;
         //后面置初始值
 //        for (int i = arr.length - 1; i > index-1; i--) {
 //            arr[i] = 0;
 //        }
         //或者用工具类截取有效数组
-        arr = Arrays.copyOf(arr, index);
+//        arr = Arrays.copyOf(arr, index);
 
     }
 }

@@ -12,7 +12,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 自动动手写一个线程池
+ * 自动手写一个线程池
  */
 public class MyThreadPoolExecutor implements Executor {
     public static void main(String[] args) {

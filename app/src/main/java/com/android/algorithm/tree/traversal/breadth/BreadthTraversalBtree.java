@@ -38,4 +38,23 @@ class BreadthTraversalBtree {
             }
         }
     }
+
+    private void traversal(TreeNode<Integer> node) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (node == null) {
+            return;
+        }
+        queue.add(node);
+        TreeNode<Integer> node1;
+        while (!queue.isEmpty()) {
+            node1 = queue.poll();
+            System.out.println(node1.val);
+            if (node1.left != null) {
+                queue.add(node1.left);
+            }
+            if (node1.right != null) {
+                queue.add(node1.right);
+            }
+        }
+    }
 }

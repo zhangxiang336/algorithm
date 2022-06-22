@@ -1,17 +1,8 @@
 package com.android.algorithm.mutiThread;
 
-import android.graphics.SurfaceTexture;
-import android.os.Handler;
-import android.view.SurfaceView;
-import android.view.TextureView;
-import android.widget.TextView;
-
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 
 class Sample {
@@ -30,10 +21,11 @@ class Sample {
         //实现主体算法
         int threadCount = 2;
         ExecutorService executorPool = Executors.newFixedThreadPool(threadCount);
-        executorPool.submit(new InsideClass());
+        executorPool.submit(new Worker());
+
     }
 
-    class InsideClass implements Callable<String> {
+    class Worker implements Callable<String> {
 
         @Override
         public String call() throws Exception {

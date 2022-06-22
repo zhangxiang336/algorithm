@@ -18,6 +18,8 @@ allprojects {
     repositories {
         maven { url 'https://pkgs.d.xiaomi.net/artifactory/artifactory-releases' }
         maven { url 'https://pkgs.d.xiaomi.net/artifactory/artifactory-snapshots' }
+        maven { url 'http://sdk.pt.miui.com/miuisdk/maven2/' }
+
         google()
         jcenter()
     }

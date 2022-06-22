@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 class SampleLock {
     private String[] arr1 = {"1", "2", "3", "4", "5"};
-    private Lock lock = new ReentrantLock();
+    private static Lock lock = new ReentrantLock();
     private Condition condition = lock.newCondition();
 
     public static void main(String[] args) {
@@ -25,10 +25,11 @@ class SampleLock {
         //实现主体算法
         int threadCount = 2;
         ExecutorService executorPool = Executors.newFixedThreadPool(threadCount);
-        executorPool.submit(new InsideClass());
+        executorPool.submit(new Worker());
+
     }
 
-    class InsideClass implements Callable<String> {
+    class Worker implements Callable<String> {
 
         @Override
         public String call()  {

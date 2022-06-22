@@ -1,13 +1,10 @@
 package com.android.algorithm.mutiThread.producerAndConsumer;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.*;
+import java.util.concurrent.locks.*;
 
 /**
- * @author 86137
+ * Lock+Thread实现
  * Create at 2021/2/24.
  */
 
@@ -72,7 +69,7 @@ class ProducerAndConsumerLock {
                         System.out.println("当前队列为空");
                         condition.await();
                     }
-                    queue.poll();
+                    queue.remove();
                     condition.signal();
                     System.out.println("消费者消费一条任务，当前队列长度为" + queue.size());
                 } catch (InterruptedException e) {
@@ -88,5 +85,61 @@ class ProducerAndConsumerLock {
             }
         }
     }
+
+    private static final int MAX = 10;
+    ReentrantLock lock1 = new ReentrantLock();
+    Condition condition1 = lock1.newCondition();
+    Queue<Integer> queue1 = new LinkedList<>();
+
+
+    class Producer1 extends Thread {
+        @Override
+        public void run(){
+
+            try{
+               lock1.lock();
+                while(true){
+                    while(queue1.size()==MAX){
+                        condition1.await();
+                    }
+                    queue1.add(1);
+                    condition1.signal();
+                }
+
+            }catch (InterruptedException e){
+
+            }finally{
+                lock1.unlock();
+            }
+
+        }
+    }
+
+    class Consumer1 extends Thread{
+
+        @Override
+        public void run(){
+            while(true){
+                try{
+                    lock1.lock();
+                    while(queue1.size()==0){
+                        condition1.await();
+                    }
+                    queue.poll();
+                    System.out.println(queue.size());
+                    condition.signal();
+                }catch(InterruptedException e){
+                    e.printStackTrace();
+                }finally{
+                    lock1.unlock();
+                }
+
+
+
+            }
+        }
+
+    }
+
 
 }

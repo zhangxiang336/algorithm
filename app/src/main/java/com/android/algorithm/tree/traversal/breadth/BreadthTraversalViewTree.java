@@ -10,7 +10,7 @@ import java.util.Queue;
 
 /**
  * 广度遍历、层次遍历View树
- *
+ * <p>
  * getChildCount + getChildAt
  */
 public class BreadthTraversalViewTree {
@@ -41,5 +41,26 @@ public class BreadthTraversalViewTree {
                 }
             }
         }
+    }
+
+    private void traversalViewTree(View view) {
+        if (view == null) {
+            return;
+        }
+        Queue<View> queue = new LinkedList<>();
+        View view1;
+        queue.add(view);
+        int count;
+        while (!queue.isEmpty()) {
+            view1 = queue.poll();
+            System.out.println(view1.getClass().getName());
+            if (view1 instanceof ViewGroup) {
+                count = ((ViewGroup) view1).getChildCount();
+                for (int i = 0; i < count; i++) {
+                    queue.add(((ViewGroup) view1).getChildAt(i));
+                }
+            }
+        }
+
     }
 }
